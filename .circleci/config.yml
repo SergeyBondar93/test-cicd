@@ -4,6 +4,6 @@ jobs:
     machine: true
     steps:
       - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-      - run: docker build -t teststatic .
+      - run: docker build -t teststatic SergeyBondar93/test-cicd
       - run: docker tag teststatic sergeybondar93/teststatic:1.3.0
       - run: docker push sergeybondar93/teststatic:1.3.0
